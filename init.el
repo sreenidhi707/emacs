@@ -15,7 +15,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (auto-complete-c-headers yasnippet auto-complete))))
+ '(package-selected-packages
+   (quote
+    (highlight-parentheses auto-complete-c-headers yasnippet auto-complete))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -39,3 +41,10 @@
 
 ;;My Settings
 (normal-erase-is-backspace-mode 1)
+
+;;Enables highlight-parentheses-mode on all buffers
+(define-globalized-minor-mode global-highlight-parentheses-mode
+  highlight-parentheses-mode
+  (lambda ()
+    (highlight-parentheses-mode t)))
+(global-highlight-parentheses-mode t)
