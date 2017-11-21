@@ -40,7 +40,9 @@
 (add-hook 'c-mode-hook 'srnd:ac-c-header-init)
 
 ;;My Settings
-(normal-erase-is-backspace-mode 1)
+(normal-erase-is-backspace-mode 1)              ;; This makes delete and backspace behave in the normal way
+(setq c-default-style "linux" c-basic-offset 2) ;; Sets curly braces to come in proper place and tab space to 2
+(global-linum-mode t)                           ;; Make line numbers appear on left
 
 ;;Enables highlight-parentheses-mode on all buffers
 (define-globalized-minor-mode global-highlight-parentheses-mode
